@@ -47,6 +47,16 @@ html, body {
   width: 20px;
 }
 
+@mixin embossed-bg {
+  background:
+    linear-gradient(to bottom, rgba(#000, 0.2), rgba(#000, 0) 8px),
+    linear-gradient(to top, rgba(#000, 0.2), rgba(#000, 0) 8px),
+    linear-gradient(to bottom, rgba($nav-embossed-border-top, 1), rgba($nav-embossed-border-top, 0) 1.5px),
+    linear-gradient(to top, rgba($nav-embossed-border-bottom, 1), rgba($nav-embossed-border-bottom, 0) 1.5px),
+    $nav-subitem-bg;
+}
+
+
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
 
@@ -118,6 +128,8 @@ html, body {
       margin-bottom: 1em;
     }
 
+    @include embossed-bg;
+
     li {
       margin: 1em $nav-padding;
       line-height: 1;
@@ -153,20 +165,28 @@ html, body {
 
   // This is the currently selected ToC entry
   .toc-link.active {
+    box-shadow: 0 1px 0 $nav-active-shadow;
     background-color: $nav-active-bg;
     color: $nav-active-text;
   }
 
-  // this is parent links of the currently selected ToC entry
-  .toc-link.active-parent {
-    background-color: $nav-active-parent-bg;
-    color: $nav-active-parent-text;
-  }
+  //// this is parent links of the currently selected ToC entry
+  //.toc-link.active-parent {
+  //  background-color: $nav-active-parent-bg;
+  //  color: $nav-active-parent-text;
+  //}
 
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
     font-weight: 500;
+
+    // for embossed look:
+    @include embossed-bg;
+    &>li:last-child {
+      box-shadow: none; // otherwise it'll overflow out of the subheader
+    }
+
   }
 
   .toc-h2 {
@@ -347,14 +367,15 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 24px;
+    font-weight: 400;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
   }
 
   h1:first-child, div:first-child + h1 {
@@ -406,6 +427,7 @@ html, body {
       line-height: 1.6;
       code {
         white-space: nowrap;
+        color: #c7254e;
       }
     }
 
@@ -449,6 +471,15 @@ html, body {
     max-width: 100%;
   }
 
+  a {
+    color: $nav-content-text;
+    text-decoration: underline;
+
+    &:hover {
+      color: #0f3c5b;
+    }
+  }
+
   code {
     background-color: rgba(0,0,0,0.05);
     padding: 3px;
@@ -468,14 +499,17 @@ html, body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
+    color: $aside-notice-color;
     line-height: 1.6;
 
     &.warning {
       background-color: $aside-warning-bg;
+      color: $aside-warning-color;
     }
 
     &.success {
       background-color: $aside-success-bg;
+      color: $aside-success-color;
     }
   }
 
@@ -504,6 +538,101 @@ html, body {
     border: 1px solid #F7E633;
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
+
+  .required {
+    color: #ef6363;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-left: auto;
+  }
+
+  .required_if {
+    color: #6f5ba3;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-left: auto;
+  }
+
+  .optional {
+    color: #347fc4;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-left: auto;
+  }
+
+  .type {
+    color: #b4babd;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .post {
+    border-color: #347fc4;
+    color: #347fc4;
+  }
+
+  .get {
+    border-color: #6ac174;
+    color: #6ac174;
+  }
+
+  .put, .patch {
+    border-color: #6f5ba3;
+    color: #6f5ba3;
+  }
+
+  .delete {
+    border-color: red;
+    color: red;
+  }
+
+  .http-verb {
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-size: .8em;
+    font-weight: 400;
+    display: inline;
+    margin-right: 4px;
+    border: 1px solid;
+  }
+
+  .object {
+    font-weight: bold;
+    color: deeppink;
+    text-transform: capitalize;
+  }
+
+  .magic-block-parameters {
+    margin: 0 30px 2em;
+    .block-parameters-table {
+      padding: 0 30px;
+      overflow: auto;
+
+      .table {
+        width: 100%;
+        .th {
+          font-weight: bold;
+        }
+      }
+
+      .tr, .th, .td {
+        border: .5px solid #ccc;
+        vertical-align: middle;
+        padding: 5px 15px;
+        font-size: 14px;
+        background-color: #f9f9f9;
+        border-bottom: 2px solid #eee;
+        text-align: left;
+      }
+    }
+  }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -541,8 +670,6 @@ html, body {
 
   pre {
     @extend %code-font;
-    padding-top: 2em;
-    padding-bottom: 2em;
     padding: 2em $main-padding;
   }
 
@@ -615,6 +742,14 @@ html, body {
   color: #909090;
 }
 
+.highlight .nl {
+  color: #ccc5df;
+}
+
+.highlight .err {
+  color: #ccc5df;
+}
+
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
@@ -630,4 +765,8 @@ html, body {
 
 .copy-clipboard:hover {
   opacity: 0.8;
+}
+
+::placeholder {
+  color: #fff
 }
