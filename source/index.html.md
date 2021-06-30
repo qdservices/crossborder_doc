@@ -7,6 +7,11 @@ language_tabs: # must be one of https://git.io/vQNgJ
 includes:
   - introduction
   - authentication
+  - customers
+  - customers.list
+  - customers.create
+  - customers.get
+  - customers.update
   - waybills
   - waybills.create
   - waybills.get

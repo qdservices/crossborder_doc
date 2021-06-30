@@ -46,7 +46,7 @@
 
 A waybill is a document that represents the contents of a shipment ready for transport. It details
 the exact quantity, price and delivery details of the individual packages. 
-Perform the simple operations mentioned below to create and manage your Waybill.
+Perform the simple operations mentioned below to create and manage your Waybill pre alert.
 
 Attribute | Type | Description
 --------- | ------- | -----------

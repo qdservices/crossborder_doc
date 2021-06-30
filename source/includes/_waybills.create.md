@@ -81,7 +81,7 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint creates a new Sales Order in OMNISHIP fulfillment. 
+This endpoint creates a new Waybill pre alert in OMNISHIP cross border. 
 
 ### HTTP Request
 
@@ -95,7 +95,7 @@ customer_code | <span class="type">string</span> | <span class="required">requir
 waybill_type | <span class="type">string</span> | <span class="required">required</span> The type of waybill. Valid values are `air`, `road`, `train`, `other`
 waybill_number | <span class="type">string</span> | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.
 reference | <span class="type">string</span> | <span class="required">required</span> Unique reference usually the ID of the external system where shipment is uploaded from.
-weight_unit | <span class="type">string</span> | <span class="optional">optional</span> The weight unit used for the weights in the pre-alert. Valid values are `grams`, `kilograms`. When omitted or empty `grams` will be used.
+weight_unit | <span class="type">string</span> | <span class="optional">optional</span> The weight unit used for the weights in the pre-alert. Valid values are `grams`, `kilograms`. When omitted or empty the default customer weight unit will be used.
 pre_alert_rows | <span class="type">array</span> | <span class="required">required</span> Line with details of the specific shipment. Each line must contain `order_number`, `bag_grade`, `country_code`.
 
 ### Pre Alert Row Parameters
