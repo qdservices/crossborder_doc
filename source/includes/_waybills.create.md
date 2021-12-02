@@ -28,7 +28,6 @@ curl "https://crossborder.omniship.eu/api/v1/waybills"
               "buyer_street": "Engelbertring 1",
               "buyer_city": "Arnsberg",
               "buyer_country_code": "59755",
-              "item_hs_code": "490199",
               "quantity": "1",
               "weight": "2.29",
               "item_hs_code": "950300",
@@ -118,6 +117,8 @@ Attribute | Type | Description
 `buyer_city` | <span class="type">string</span> | <span class="optional">optional</span> City or town of the of the package buyer.
 `buyer_country_code` | <span class="type">string</span> | <span class="required">required</span> Country code of the package buyer. (needs to be ISO 3166 2-char code).
 `item_hs_code` | <span class="type">string</span> | <span class="optional">optional</span> HS code of the of the item(s) in the package.
+`quantity` | <span class="type">string</span> | <span class="optional">optional</span> Quantity of the of the item(s) in the package.
+`weight` | <span class="type">string</span> | <span class="optional">optional</span> Weight of the of the item(s) in the package.
 `goods_description` | <span class="type">string</span> | <span class="optional">optional</span> Description of the of the item(s) in the package.
 `invoice_currency` | <span class="type">string</span> | <span class="optional">optional</span> Currency of the value of the item(s) in the package.
 `invoice_amount` | <span class="type">string</span> | <span class="optional">optional</span> Amount of the value of the item(s) in the package.
