@@ -13,6 +13,7 @@
     {
       "mawb_nr": "235-23549621",
       "parcel_id": "WBDEM100073974019U",
+      "package_barcode": "226003462045",
       "seller_name": "Wildberries LLC",
       "seller_ioss_nr": "IM2760006126",
       "seller_street": "Koledino village 6 building 1",

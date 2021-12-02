@@ -15,6 +15,7 @@ curl "https://crossborder.omniship.eu/api/v1/waybills"
             {
               "mawb_nr": "235-23549621",
               "parcel_id": "WBDEM100073974019U",
+              "package_barcode": "226003462045", 
               "seller_name": "Wildberries LLC",
               "seller_ioss_nr": "IM2760006126",
               "seller_street": "Koledino village 6 building 1",
@@ -102,6 +103,7 @@ Attribute | Type | Description
 --------- | ------- | ---------
 `mawb_nr` | <span class="type">string</span> | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.
 `parcel_id` | <span class="type">string</span> | <span class="required">required</span> Parcel ID for the shipment line.
+`package_barcode` | <span class="type">string</span> | <span class="required">required</span> Package Barcode for the shipment line.
 `seller_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the company of the package consignee.
 `seller_ioss_nr` | <span class="type">string</span> | <span class="optional">optional</span> IOSS number is required by distance sellers and marketplaces in order to sell goods to buyers in the EU under the IOSS scheme.
 `seller_street` | <span class="type">number</span> | <span class="optional">required</span> Street address of the of the package consignee.
