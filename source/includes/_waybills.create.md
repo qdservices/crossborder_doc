@@ -13,30 +13,29 @@ curl "https://crossborder.omniship.eu/api/v1/waybills"
         "weight_unit": "grams",
         "pre_alert_rows": [
             {
-                "parcel_id": "GSHML800Y0007SD",
-                "mawb_nr": "01505272372693",
-                "seller_name": null,
-                "seller_ioss_nr": null,
-                "seller_street": null,
-                "seller_city": null,
-                "seller_country_code": null,
-                "transaction_type": null,
-                "package_barcode": null,
-                "buyer_street": null,
-                "buyer_name": null,
-                "buyer_eori": null,
-                "buyer_street": null,
-                "buyer_city": null,
-                "buyer_country_code": "DE",
-                "item_hs_code": null,
-                "quantity": null,
-                "weight": null,
-                "item_hs_code": 0,
-                "goods_description": null,
-                "invoice_currency": null,
-                "invoice_amount": null,
-                "charges_currency": null,
-                "other_charges": null
+              "mawb_nr": "235-23549621",
+              "parcel_id": "WBDEM100073974019U",
+              "seller_name": "Wildberries LLC",
+              "seller_ioss_nr": "IM2760006126",
+              "seller_street": "Koledino village 6 building 1",
+              "seller_city": "Podolsk",
+              "seller_country_code": "RU",
+              "transaction_type": "B2C",
+              "buyer_street": "Berlin",
+              "buyer_name": "Marco Polo",
+              "buyer_eori": null,
+              "buyer_street": "Engelbertring 1",
+              "buyer_city": "Arnsberg",
+              "buyer_country_code": "59755",
+              "item_hs_code": "490199",
+              "quantity": "1",
+              "weight": "2.29",
+              "item_hs_code": "950300",
+              "goods_description": "Book",
+              "invoice_currency": "EUR",
+              "invoice_amount": "7.23",
+              "charges_currency": null,
+              "other_charges": null
             },
             {"..."},
             {"..."}
@@ -101,21 +100,21 @@ pre_alert_rows | <span class="type">array</span> | <span class="required">requir
 
 Attribute | Type | Description
 --------- | ------- | ---------
+`mawb_nr` | <span class="type">string</span> | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.
 `parcel_id` | <span class="type">string</span> | <span class="required">required</span> Parcel ID for the shipment line.
-`mawb_nr` | <span class="type">string</span> | <span class="optional">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer
-`seller_name` | <span class="type">string</span> | <span class="optional">required</span> Name of the company of the package consignee.
+`seller_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the company of the package consignee.
 `seller_ioss_nr` | <span class="type">string</span> | <span class="optional">optional</span> IOSS number is required by distance sellers and marketplaces in order to sell goods to buyers in the EU under the IOSS scheme.
 `seller_street` | <span class="type">number</span> | <span class="optional">required</span> Street address of the of the package consignee.
 `seller_city` | <span class="type">string</span> | <span class="optional">optional</span> City or town of the of the package consignee.
-`seller_country_code` | <span class="type">string</span> | <span class="optional">optional</span> Country code of the of the package consignee. (needs to be ISO 3166 2-char code)
-`transaction_type` | <span class="type">string</span> | <span class="optional">optional</span> Phone number of the of the package consignee.
+`seller_country_code` | <span class="type">string</span> | <span class="optional">optional</span> Country code of the of the package consignee. (needs to be ISO 3166 2-char code).
+`transaction_type` | <span class="type">string</span> | <span class="optional">optional</span> Transaction type (B2B or B2C) of the package.
 `package_barcode` | <span class="type">string</span> | <span class="optional">optional</span> Barcode of the package. Usually the final mile carrier barcode.
 `buyer_street` | <span class="type">string</span> | <span class="optional">optional</span> Street address of the of the package consignee.
 `buyer_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the of the package buyer.
 `buyer_eori` | <span class="type">string</span> | <span class="optional">optional</span> Eori is the European Union registration and identification number used in all customs procedures performed by economic operators.
 `buyer_street` | <span class="type">string</span> | <span class="optional">optional</span> Street address of the package buyer.
 `buyer_city` | <span class="type">string</span> | <span class="optional">optional</span> City or town of the of the package buyer.
-`buyer_country_code` | <span class="type">string</span> | <span class="required">required</span> Country code of the package buyer. (needs to be ISO 3166 2-char code)
+`buyer_country_code` | <span class="type">string</span> | <span class="required">required</span> Country code of the package buyer. (needs to be ISO 3166 2-char code).
 `item_hs_code` | <span class="type">string</span> | <span class="optional">optional</span> HS code of the of the item(s) in the package.
 `goods_description` | <span class="type">string</span> | <span class="optional">optional</span> Description of the of the item(s) in the package.
 `invoice_currency` | <span class="type">string</span> | <span class="optional">optional</span> Currency of the value of the item(s) in the package.
