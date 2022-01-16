@@ -13,29 +13,31 @@ curl "https://crossborder.omniship.eu/api/v1/waybills"
         "weight_unit": "grams",
         "pre_alert_rows": [
             {
-              "mawb_nr": "235-23549621",
-              "parcel_id": "WBDEM100073974019U",
-              "package_barcode": "226003462045", 
-              "seller_name": "Wildberries LLC",
-              "seller_ioss_nr": "IM2760006126",
-              "seller_street": "Koledino village 6 building 1",
-              "seller_city": "Podolsk",
-              "seller_country_code": "RU",
-              "transaction_type": "B2C",
-              "buyer_street": "Berlin",
-              "buyer_name": "Marco Polo",
-              "buyer_eori": null,
-              "buyer_street": "Engelbertring 1",
-              "buyer_city": "Arnsberg",
-              "buyer_country_code": "59755",
-              "quantity": "1",
-              "weight": "2.29",
-              "item_hs_code": "950300",
-              "goods_description": "Book",
-              "invoice_currency": "EUR",
-              "invoice_amount": "7.23",
-              "charges_currency": null,
-              "other_charges": null
+              "order_number": "GSHML800Y0007SD",
+              "package_barcode": "01505272372693",
+              "bag_grade": "Z42104029016",
+              "shipping_method": "DE DPD",
+              "weight": "551.00",
+              "company_name": null,
+              "consignee_name": null,
+              "phone_number": null,
+              "email_address": null,
+              "street": null,
+              "house_number": null,
+              "house_number_extension": null,
+              "additional_address_info": null,
+              "city_or_town": "Stödtlen",
+              "state_or_province": null,
+              "zip_code": "73495",
+              "country_code": "DE",
+              "sku_code": null,
+              "sku_description": null,
+              "quantity": 0,
+              "currency": null,
+              "price": null,
+              "shipping_costs": null,
+              "hs_code": null,
+              "website": null
             },
             {"..."},
             {"..."}
@@ -65,7 +67,7 @@ Content-Type:application/json;charset=UTF-8
   "job_state": "uploading",
   "date_received": "2021-06-29T11:41:18.000000Z",
   "updated_at": "2021-06-29T11:41:18.000000Z",
-  "customer": "OminiShip",
+  "customer": "Global Freight System",
   "bags": [],
   "in_container": 0,
   "total": 1,
@@ -100,27 +102,28 @@ pre_alert_rows | <span class="type">array</span> | <span class="required">requir
 
 Attribute | Type | Description
 --------- | ------- | ---------
-`mawb_nr` | <span class="type">string</span> | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.
-`parcel_id` | <span class="type">string</span> | <span class="required">required</span> Parcel ID for the shipment line.
-`package_barcode` | <span class="type">string</span> | <span class="required">required</span> Package Barcode for the shipment line.
-`seller_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the company of the package consignee.
-`seller_ioss_nr` | <span class="type">string</span> | <span class="optional">optional</span> IOSS number is required by distance sellers and marketplaces in order to sell goods to buyers in the EU under the IOSS scheme.
-`seller_street` | <span class="type">number</span> | <span class="optional">required</span> Street address of the of the package consignee.
-`seller_city` | <span class="type">string</span> | <span class="optional">optional</span> City or town of the of the package consignee.
-`seller_country_code` | <span class="type">string</span> | <span class="optional">optional</span> Country code of the of the package consignee. (needs to be ISO 3166 2-char code).
-`transaction_type` | <span class="type">string</span> | <span class="optional">optional</span> Transaction type (B2B or B2C) of the package.
+`order_number` | <span class="type">string</span> | <span class="required">required</span> Order number for the shipment line.
 `package_barcode` | <span class="type">string</span> | <span class="optional">optional</span> Barcode of the package. Usually the final mile carrier barcode.
-`buyer_street` | <span class="type">string</span> | <span class="optional">optional</span> Street address of the of the package consignee.
-`buyer_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the of the package buyer.
-`buyer_eori` | <span class="type">string</span> | <span class="optional">optional</span> Eori is the European Union registration and identification number used in all customs procedures performed by economic operators.
-`buyer_street` | <span class="type">string</span> | <span class="optional">optional</span> Street address of the package buyer.
-`buyer_city` | <span class="type">string</span> | <span class="optional">optional</span> City or town of the of the package buyer.
-`buyer_country_code` | <span class="type">string</span> | <span class="required">required</span> Country code of the package buyer. (needs to be ISO 3166 2-char code).
-`item_hs_code` | <span class="type">string</span> | <span class="optional">optional</span> HS code of the of the item(s) in the package.
-`quantity` | <span class="type">string</span> | <span class="optional">optional</span> Quantity of the of the item(s) in the package.
-`weight` | <span class="type">string</span> | <span class="optional">optional</span> Weight of the of the item(s) in the package.
-`goods_description` | <span class="type">string</span> | <span class="optional">optional</span> Description of the of the item(s) in the package.
-`invoice_currency` | <span class="type">string</span> | <span class="optional">optional</span> Currency of the value of the item(s) in the package.
-`invoice_amount` | <span class="type">string</span> | <span class="optional">optional</span> Amount of the value of the item(s) in the package.
-`charges_currency` | <span class="type">number</span> | <span class="optional">optional</span> Charges Currency of the value of the item(s) in the package.
-`other_charges` | <span class="type">string</span> | <span class="optional">optional</span> Other charges of the value of the item(s) in the package.
+`bag_grade` | <span class="type">string</span> | <span class="requried">required</span> Barcode of the bag/box containing the packages.
+`shipping_method` | <span class="type">string</span> | <span class="optional">optional</span> Method of shipping. Can be used as an identifier of the implementation hub.
+`weight` | <span class="type">number</span> | <span class="required">required</span> Weight of the package described on the shipping line. The weight will be reflected using the weight_unit given.
+`company_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the company of the package consignee.
+`consignee_name` | <span class="type">string</span> | <span class="optional">optional</span> Name of the of the package consignee.
+`phone_number` | <span class="type">string</span> | <span class="optional">optional</span> Phone number of the of the package consignee.
+`email_address` | <span class="type">string</span> | <span class="optional">optional</span> Email address of the of the package consignee.
+`street` | <span class="type">string</span> | <span class="optional">optional</span> Street address of the of the package consignee.
+`house_number` | <span class="type">number</span> | <span class="optional">optional</span> House number of the of the package consignee.
+`house_number_extension` | <span class="type">string</span> | <span class="optional">optional</span> House number extension of the of the package consignee.
+`additional_address_info` | <span class="type">string</span> | <span class="optional">optional</span> Additional address info i.e. `Apt 10`.
+`city_or_town` | <span class="type">string</span> | <span class="optional">optional</span> City or town of the of the package consignee.
+`state_or_province` | <span class="type">string</span> | <span class="optional">optional</span> State or province of the of the package consignee.
+`zip_code` | <span class="type">string</span> | <span class="optional">optional</span> Zip code of the of the package consignee.
+`country_code` | <span class="type">string</span> | <span class="required">required</span> Country code of the of the package consignee. (needs to be ISO 3166 2-char code)
+`sku_code` | <span class="type">string</span> | <span class="optional">optional</span> SKU code of the of the item(s) in the package.
+`sku_description` | <span class="type">string</span> | <span class="optional">optional</span> Description of the of the item(s) in the package.
+`quantity` | <span class="type">number</span> | <span class="optional">optional</span> Quantity items in the package.
+`currency` | <span class="type">string</span> | <span class="optional">optional</span> Currency of the value of the item in the package.
+`price` | <span class="type">number</span> | <span class="optional">optional</span> Value of the item in the package.
+`shipping_costs` | <span class="type">number</span> | <span class="optional">optional</span> Shipping costs of the package.
+`hs_code` | <span class="type">string</span> | <span class="optional">optional</span> HS tariff code for customs.
+`website` | <span class="type">url</span> | <span class="optional">optional</span> URL of the details page of the specified item.
