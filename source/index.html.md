@@ -2,7 +2,10 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
+  - shell 
+
+toc_footers:
+  - <a target='_blank' href='https://developer.crossborder.omniship.eu/v1'>Go to version 1</a>
 
 includes:
   - introduction_v2
