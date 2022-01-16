@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell 
 
 toc_footers:
-  - <a target='_blank' href='https://developer.crossborder.omniship.eu/'>Go to latest version</a>
+  - <a href='https://developer.crossborder.omniship.eu/'>Go to latest version</a>
 
 includes:
   - introduction
