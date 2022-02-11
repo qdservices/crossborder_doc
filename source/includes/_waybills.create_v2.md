@@ -88,15 +88,16 @@ This endpoint creates a new Waybill pre alert in OMNISHIP cross border.
 
 ### Arguments
 
-Attribute | Type | Description
---------- | ----------- | ----------
-customer_code | <span class="type">string</span> | <span class="required">required</span> The unique customer code. This code should reflect a customer code in the database.
-waybill_type | <span class="type">string</span> | <span class="required">required</span> The type of waybill. Valid values are `air`, `road`, `train`, `other`
-waybill_number | <span class="type">string</span> | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.
-reference | <span class="type">string</span> | <span class="required">required</span> Unique reference usually the ID of the external system where shipment is uploaded from.
-weight_unit | <span class="type">string</span> | <span class="optional">optional</span> The weight unit used for the weights in the pre-alert. Valid values are `grams`, `kilograms`. When omitted or empty the default customer weight unit will be used.
+Attribute | Type                                    | Description
+--------- |-----------------------------------------| ----------
+customer_code | <span class="type">string</span>        | <span class="required">required</span> The unique customer code. This code should reflect a customer code in the database.
+waybill_type | <span class="type">string</span>        | <span class="required">required</span> The type of waybill. Valid values are `air`, `road`, `train`, `other`
+waybill_number | <span class="type">string</span>        | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.
+reference | <span class="type">string</span>        | <span class="required">required</span> Unique reference usually the ID of the external system where shipment is uploaded from.
+customs_declaration | <span class="type">boolean</span>       | <span class="optional">optional</span> Indicates if OmniShip should process the customs declaration for this shipment. Default is `true`.
+weight_unit | <span class="type">string</span>        | <span class="optional">optional</span> The weight unit used for the weights in the pre-alert. Valid values are `grams`, `kilograms`. When omitted or empty the default customer weight unit will be used.
 waybill_document | <span class="type">base64_string</span> | <span class="required_if">Required If</span> `waybill_type` is `air` base64 encoded pdf file of the Waybill Document associated with the shipment.
-pre_alert_rows | <span class="type">array</span> | <span class="required">required</span> Line with details of the specific shipment. Each line must contain `parcel_id`, `package_barcode`, `seller_name`, `seller_ioss_nr`, `seller_street`, `seller_city`, `seller_country_code`, `transaction_type`, `buyer_name`, `buyer_street`, `buyer_city`, `buyer_country_code`, `item_hs_code`, `quantity`, `weight`, `item_hs_code`, `goods_description`, `invoice_currency`, `invoice_amount`.
+pre_alert_rows | <span class="type">array</span>         | <span class="required">required</span> Line with details of the specific shipment. Each line must contain `parcel_id`, `package_barcode`, `seller_name`, `seller_ioss_nr`, `seller_street`, `seller_city`, `seller_country_code`, `transaction_type`, `buyer_name`, `buyer_street`, `buyer_city`, `buyer_country_code`, `item_hs_code`, `quantity`, `weight`, `item_hs_code`, `goods_description`, `invoice_currency`, `invoice_amount`.
 
 ### Pre Alert Row Parameters
 
