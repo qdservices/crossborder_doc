@@ -34,12 +34,12 @@ This endpoint creates a new Customer in OMNISHIP cross border.
 
 ### HTTP Request
 
-<span class="http-verb post">POST</span> `https://crossborder.omniship.eu/api/v2/waybills`
+<span class="http-verb post">POST</span> `https://crossborder.omniship.eu/api/v2/customers`
 
 ### Arguments
 
-Attribute | Type | Description
---------- | ----------- | ----------
-code | <span class="type">string</span> | <span class="required">required</span> The unique customer code. This code must be unique. Usually a three letter abbreviation of the customer name.
-name | <span class="type">string</span> | <span class="required">required</span> The name of the customer.
-weight_unit | <span class="type">string</span> | <span class="required">required</span> The default weight unit used for the weights in the Waybill pre-alert uploads. Valid values are `grams`, `kilograms`.
+| Attribute   | Type                             | Description                                                                                                                                                  |
+|-------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| code        | <span class="type">string</span> | <span class="required">required</span> The unique customer code. This code must be unique. Usually a three letter abbreviation of the customer name.         |
+| name        | <span class="type">string</span> | <span class="required">required</span> The name of the customer.                                                                                             |
+| weight_unit | <span class="type">string</span> | <span class="required">required</span> The default weight unit used for the weights in the Waybill pre-alert uploads. Valid values are `grams`, `kilograms`. |

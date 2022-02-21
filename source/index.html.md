@@ -18,6 +18,12 @@ includes:
   - waybills_v2
   - waybills.create_v2
   - waybills.get_v2
+  - shipping_methods
+  - shipping_methods.list
+  - shipping_methods.create
+  - shipping_methods.get
+  - shipping_methods.update
+  - shipping_methods.delete
   - errors
 
 search: true
