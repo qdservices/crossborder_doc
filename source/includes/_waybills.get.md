@@ -115,6 +115,6 @@ This endpoint retrieves a specific Waybill.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the Waybill
+| Parameter | Description           |
+|-----------|-----------------------|
+| ID        | The ID of the Waybill |
