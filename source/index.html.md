@@ -10,13 +10,7 @@ toc_footers:
 includes:
   - introduction_v2
   - authentication_v2
-  - customers_v2
-  - customers.list_v2
-  - customers.create_v2
-  - customers.get_v2
-  - customers.update_v2
   - waybills_v2
-  - waybills.create_v2
   - waybills.get_v2
   - shipping_methods
   - shipping_methods.list

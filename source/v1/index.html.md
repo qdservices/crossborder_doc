@@ -10,13 +10,7 @@ toc_footers:
 includes:
   - introduction
   - authentication
-  - customers
-  - customers.list
-  - customers.create
-  - customers.get
-  - customers.update
   - waybills
-  - waybills.create
   - waybills.get
   - errors
 
