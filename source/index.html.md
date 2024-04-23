@@ -20,6 +20,7 @@ includes:
   - v3_parcels.create
   - v3_parcels.get
   - v3_webhooks
+  - v3_webhooks.guide
   - errors
 
 search: true
