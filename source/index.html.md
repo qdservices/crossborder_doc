@@ -6,18 +6,14 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 1</a>
+  - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 2</a>
 
 includes:
-  - introduction_v2
-  - authentication_v2
-  - waybills_v2
-  - waybills.get_v2
-  - shipping_methods
-  - shipping_methods.list
-  - shipping_methods.create
-  - shipping_methods.get
-  - shipping_methods.update
-  - shipping_methods.delete
+  - introduction_v3
+  - authentication_v3
+  - waybills_v3
+  - waybills.get_v3
+  - waybills.create_v3
   - errors
 
 search: true
