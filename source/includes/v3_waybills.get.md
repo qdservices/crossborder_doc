@@ -52,7 +52,7 @@ This endpoint retrieves a specific Waybill.
 
 ### HTTP Request
 
-<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v2/waybills/<ID>`
+<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>`
 
 ### URL Parameters
 
