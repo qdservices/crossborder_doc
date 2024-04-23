@@ -1,7 +1,7 @@
 ## Retrieve a Specific Parcel
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
+curl "https://crossborder.omniship.eu/api/v3/parcels/4dcdea18-afb4-4c38-8541-9b83056a5667"
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
 ```
@@ -48,14 +48,14 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint retrieves a specific Waybill.
+This endpoint retrieves a specific Parcel.
 
 ### HTTP Request
 
-<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v2/waybills/<ID>`
+<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v3/parcels/<ID>`
 
 ### URL Parameters
 
-| Parameter | Description           |
-|-----------|-----------------------|
-| ID        | The ID of the Waybill |
+| Parameter | Description          |
+|-----------|----------------------|
+| ID        | The ID of the Parcel |
