@@ -10,3 +10,4 @@ This API follows HTTP rules, enabling a wide range of HTTP clients which can be 
 Every resource is exposed as a URL. The URL of each resource can be obtained by accessing the API Root Endpoint [https://crossborder.omniship.eu/api/v3/](https://crossborder.omniship.eu/v3/).
 
 For example the Waybills resource is reachable at [https://crossborder.omniship.eu/api/v3/waybills](https://crossborder.omniship.eu/v3/customers).
+
