@@ -12,8 +12,8 @@ includes:
   - introduction_v3
   - authentication_v3
   - waybills_v3
-  - waybills.get_v3
   - waybills.create_v3
+  - waybills.get_v3
   - errors
 
 search: true
