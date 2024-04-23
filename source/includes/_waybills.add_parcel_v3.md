@@ -1,4 +1,4 @@
-## Create a Waybill
+## Create and add a Parcel to a Waybill
 
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/add-parcel"
