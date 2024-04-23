@@ -14,6 +14,7 @@ includes:
   - waybills_v3
   - waybills.create_v3
   - waybills.get_v3
+  - waybills.update_v3
   - errors
 
 search: true
