@@ -9,17 +9,17 @@ toc_footers:
   - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 2</a>
 
 includes:
-  - introduction_v3
-  - authentication_v3
-  - waybills_v3
-  - waybills.create_v3
-  - waybills.get_v3
-  - waybills.update_v3
-  - waybills.add_parcel_v3
-  - parcels_v3
-  - parcels.create_v3
-  - parcels.get_v3
-  - webhooks_v3
+  - v3_introduction
+  - v3_authentication
+  - v3_waybills
+  - v3_waybills.create
+  - v3_waybills.get
+  - v3_waybills.update
+  - v3_waybills.add_parcel
+  - v3_parcels
+  - v3_parcels.create
+  - v3_parcels.get
+  - v3_webhooks
   - errors
 
 search: true

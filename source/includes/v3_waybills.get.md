@@ -26,7 +26,7 @@ Content-Type:application/json;charset=UTF-8
     "bigBagCount": 1,
     "grossWeight": 13.25,
     "airline": {
-      "trackingLink": "https:\/\/cargo.koreanair.com\/tracking",
+      "trackingLink": "https://cargo.koreanair.com/tracking",
       "name": "Korean Air Lines",
       "prefix": "180",
       "code": "KE",

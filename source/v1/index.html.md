@@ -8,10 +8,10 @@ toc_footers:
   - <a href='https://developer.crossborder.omniship.eu/'>Go to latest version</a>
 
 includes:
-  - introduction
-  - authentication
-  - waybills
-  - waybills.get
+  - v1_introduction
+  - v1_authentication
+  - v1_waybills
+  - v1_waybills.get
   - errors
 
 search: true

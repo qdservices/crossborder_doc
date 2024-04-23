@@ -31,6 +31,6 @@ This endpoint retrieves a specific Customer.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the Customer
+| Parameter | Description            |
+|-----------|------------------------|
+| ID        | The ID of the Customer |

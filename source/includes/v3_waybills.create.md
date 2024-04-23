@@ -39,7 +39,7 @@ Content-Type:application/json;charset=UTF-8
     "bigBagCount": 1,
     "grossWeight": 13.25,
     "airline": {
-      "trackingLink": "https:\/\/cargo.koreanair.com\/tracking",
+      "trackingLink": "https://cargo.koreanair.com/tracking",
       "name": "Korean Air Lines",
       "prefix": "180",
       "code": "KE",
@@ -52,7 +52,7 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint creates a new Waybill pre alert in ALL<span style="color: #d83636;">IN</span>E cross border. 
+This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">ALL<span style="color: #d83636;">IN</span>E</span> cross border. 
 
 ### HTTP Request
 
