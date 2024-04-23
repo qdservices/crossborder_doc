@@ -16,6 +16,9 @@ includes:
   - waybills.get_v3
   - waybills.update_v3
   - waybills.add_parcel_v3
+  - parcels.create_v3
+  - parcels.get_v3
+  - webhooks_v3
   - errors
 
 search: true
