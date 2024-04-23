@@ -9,16 +9,16 @@ toc_footers:
   - <a href='https://developer.crossborder.omniship.eu'>Go to the latest version</a>
 
 includes:
-  - v_2_introduction
-  - v_2_authentication
-  - v_2_waybills
-  - v_2_waybills.get
-  - shipping_methods
-  - shipping_methods.list
-  - shipping_methods.create
-  - shipping_methods.get
-  - shipping_methods.update
-  - shipping_methods.delete
+  - v2_introduction
+  - v2_authentication
+  - v2_waybills
+  - v2_waybills.get
+  - v2_shipping_methods
+  - v2_shipping_methods.list
+  - v2_shipping_methods.create
+  - v2_shipping_methods.get
+  - v2_shipping_methods.update
+  - v2_shipping_methods.delete
   - errors
 
 search: true
