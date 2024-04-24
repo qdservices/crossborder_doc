@@ -1,7 +1,7 @@
 ## Create and add a Parcel to a Waybill
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/add-parcel"
+curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/parcels"
   -X POST
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
@@ -86,4 +86,4 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 
 ### HTTP Request
 
-<span class="http-verb post">POST</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/add-parcel`
+<span class="http-verb post">POST</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/parcels`
