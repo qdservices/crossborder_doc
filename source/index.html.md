@@ -18,8 +18,8 @@ includes:
   - v3_waybills.add_parcel
   - v3_webhooks
   - v3_webhooks.events
-  - v3_webhooks.parcel.status.changed
-  - v3_webhooks.waybill.status.changed
+  - v3_webhooks.parcel_status_changed
+  - v3_webhooks.waybill_status_changed
   - errors
 
 search: true
