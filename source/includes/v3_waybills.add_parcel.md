@@ -47,10 +47,10 @@ Content-Type:application/json;charset=UTF-8
 ```json
 {
   "data": {
-    "id": "a51133c1-a0a4-4867-9507-18a6082aaacc",
-    "state": "created",
-    "waybillId": "4dcdea18-afb4-4c38-8541-9b83056a5667",
-    "waybillNumber": "180-19687301",
+    "id": "711277a6-239b-4992-ab4a-cac276a27e21",
+    "state": "pre_upload",
+    "waybillId": "1cb3480a-86d3-44f2-a36d-f082e501fd37",
+    "waybillNumber": "112-60318215",
     "finalMileTrackingNumber": "1Z1V510W6898496192",
     "bigBagBarcode": "DE202301009-001",
     "shippingMethod": "DPD145",
