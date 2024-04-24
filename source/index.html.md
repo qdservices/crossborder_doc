@@ -16,6 +16,7 @@ includes:
   - v3_waybills.get
   - v3_waybills.update
   - v3_waybills.add_parcel
+  - v3_waybills.parcel_status_changed
   - errors
 
 search: true
