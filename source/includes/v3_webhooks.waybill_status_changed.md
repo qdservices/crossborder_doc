@@ -4,7 +4,8 @@ When your shipment's tracking status changed, you'll get the event payload as be
 
 parcel.state.changed
 
-```json
+<pre>
+<code>
 {
   "event_type": "waybill.state.changed",
   "resource_type": "waybill",
@@ -17,7 +18,8 @@ parcel.state.changed
     "updated_at_local_time": "2024-05-26T15:05:32",
   }
 }
-```
+</code>
+</pre>
 
 
 

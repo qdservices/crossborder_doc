@@ -3,8 +3,8 @@
 When your shipment's tracking status changed, you'll get the event payload as below:
 
 parcel.state.changed
-
-```json
+<pre>
+<code>
 {
   "event_type": "parcel.state.changed",
   "resource_type": "parcel",
@@ -23,7 +23,8 @@ parcel.state.changed
     "lastUpdatedLocalTime": "2024-05-26T15:03:26"
   }
 }
-```
+</code>
+</pre>
 
 
 
