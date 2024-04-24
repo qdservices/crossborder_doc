@@ -17,6 +17,6 @@ In order to authenticate properly, please put <code>Authorization: Bearer &lt;AP
 
 `Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv`
 
-<aside class="notice">
+<aside class="warning">
 You must replace <code><strong>FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv</strong></code> with your personal API key.
 </aside>
