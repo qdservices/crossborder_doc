@@ -16,9 +16,6 @@ includes:
   - v3_waybills.get
   - v3_waybills.update
   - v3_waybills.add_parcel
-  - v3_parcels
-  - v3_parcels.create
-  - v3_parcels.get
   - v3_webhooks
   - v3_webhooks.events
   - v3_webhooks.parcel.status.changed
