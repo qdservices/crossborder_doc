@@ -12,5 +12,5 @@ Every resource is exposed as a URL. The URL of each resource can be obtained by 
 For example the Waybills resource is reachable at [https://crossborder.omniship.eu/api/v3/waybills](https://crossborder.omniship.eu/v3/customers).
 
 <aside class="notice">
-  For testing the endpoint [https://staging.crossborder.omniship.eu/api/v3](https://staging.crossborder.omniship.eu/v3) is used. Your account representative will provide you with the account and key(s) for testing in the staging environment.
+  For testing the endpoint https://staging.crossborder.omniship.eu/api/v3 is used. Your account representative will provide you with the account and key(s) for testing in the staging environment.
 </aside>
