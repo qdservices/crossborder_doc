@@ -21,6 +21,8 @@ includes:
   - v3_parcels.get
   - v3_webhooks
   - v3_webhooks.events
+  - v3_webhooks.parcel.status.changed
+  - v3_webhooks.waybill.status.changed
   - errors
 
 search: true
