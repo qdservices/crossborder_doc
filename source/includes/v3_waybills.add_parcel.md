@@ -146,13 +146,14 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 				<div class="td"><p><code>iossNumber</code></p></div>
 				<div class="td"><p><span>string</span></p></div>
 				<div class="td"><p><span class="required_if">Required If</span> <code>transactionType</code> is <code>B2C</code> and the parcel should be declared to customs. Only for sellerDetails</p></div>
-        <aside class="notice">
-          The Ioss Number can be send as a base64 string after AES encryption. Please check with your account representative for encryption key information.
-        </aside>
 			</div>
 		</div>
 	</div>
 </div>
+
+<aside class="notice">
+  The `iossNumber` can be sent as a base64 string after AES encryption. Please check with your account representative for encryption key information.
+</aside>
 
 
 ### CustomsItem definitions:
