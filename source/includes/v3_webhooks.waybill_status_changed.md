@@ -4,7 +4,7 @@ When your shipment's tracking status changed, you'll get the event payload as be
 
 waybill.state.changed
 
-
+<pre style="float:left">
 <code>
 {
   "event_type": "waybill.state.changed",
@@ -19,6 +19,7 @@ waybill.state.changed
   }
 }
 </code>
+</pre>
 
 
 
