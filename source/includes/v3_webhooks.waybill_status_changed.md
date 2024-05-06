@@ -2,9 +2,9 @@
 
 When your shipment's tracking status changed, you'll get the event payload as below:
 
-parcel.state.changed
+waybill.state.changed
 
-<pre>
+
 <code>
 {
   "event_type": "waybill.state.changed",
@@ -19,7 +19,7 @@ parcel.state.changed
   }
 }
 </code>
-</pre>
+
 
 
 

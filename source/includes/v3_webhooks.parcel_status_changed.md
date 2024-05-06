@@ -3,7 +3,7 @@
 When your shipment's tracking status changed, you'll get the event payload as below:
 
 parcel.state.changed
-<pre>
+
 <code>
 {
   "event_type": "parcel.state.changed",
@@ -24,11 +24,3 @@ parcel.state.changed
   }
 }
 </code>
-</pre>
-
-
-
-
-
-
-
