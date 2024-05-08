@@ -2,7 +2,7 @@
 
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/confirm"
-  -X PATCH
+  -X PUT
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
   
@@ -58,11 +58,11 @@ This endpoint confirms a new AirWaybill in ALL<span style="color: #d83636;">IN</
 
 ### HTTP Request
 
-<span class="http-verb patch">PATCH</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/confirm`
+<span class="http-verb put">PUT</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/confirm`
 
 ### URL Parameters
 
-| Parameter | Description                      |
-|-----------|----------------------------------|
-|  ID       | The ID of the Waybill to confirm |
+| Parameter | Description                                                                                                                                                   |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ID        | The ID of the <span class="object">Waybill</span> to confirm. The ID was given at creation of the waybill and was either generated or is the given reference. |
 

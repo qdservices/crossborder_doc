@@ -60,6 +60,6 @@ This endpoint retrieves a specific Waybill.
 
 ### URL Parameters
 
-| Parameter | Description                                                                      |
-|-----------|----------------------------------------------------------------------------------|
-| ID        | Alline Waybill ID provided when creating the <span class="object">Waybill</span> |
+| Parameter | Description                                                                                                                                                                       |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ID        | Alline Waybill ID provided when creating the <span class="object">Waybill</span>. The ID was given at creation of the waybill and was either generated or is the given reference. |

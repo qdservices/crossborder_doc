@@ -22,6 +22,6 @@ Content-Type:application/json;charset=UTF-8
 
 ### URL Parameters
 
-| Parameter | Description                                                                |
-|-----------|----------------------------------------------------------------------------|
-| ID        | The ID of the <span class="object">Waybill</span> that needs to be deleted |
+| Parameter | Description                                                                                                                                                                 |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ID        | The ID of the <span class="object">Waybill</span> that needs to be deleted. The ID was given at creation of the waybill and was either generated or is the given reference. |

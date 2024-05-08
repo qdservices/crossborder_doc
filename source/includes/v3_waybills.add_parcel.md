@@ -91,9 +91,9 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 
 ### URL Parameters
 
-| Parameter | Description                                                                                                  |
-|-----------|--------------------------------------------------------------------------------------------------------------|
-| ID        | The ID of the <span class="object">Waybill</span> for which a <span class="object">Parcel</span> needs added |
+| Parameter | Description                                                                                                                                                                                                   |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ID        | The ID of the <span class="object">Waybill</span> for which a <span class="object">Parcel</span> needs added. The ID was given at creation of the waybill and was either generated or is the given reference. |
 
 ### Arguments
 

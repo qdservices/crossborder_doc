@@ -22,7 +22,7 @@ Content-Type:application/json;charset=UTF-8
 
 ### URL Parameters
 
-| Parameter | Description                                                                                                           |
-|-----------|-----------------------------------------------------------------------------------------------------------------------|
-| WaybillID | The ID of the <span class="object">Waybill</span> from which a <span class="object">Parcel</span> needs to be removed |
-| ParcelID  | The ID of the <span class="object">Parcel</span> to be removed                                                        |
+| Parameter | Description                                                                                                                                                                                                            |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| WaybillID | The ID of the <span class="object">Waybill</span> from which a <span class="object">Parcel</span> needs to be removed. The ID was given at creation of the waybill and was either generated or is the given reference. |
+| ParcelID  | The ID of the <span class="object">Parcel</span> to be removed                                                                                                                                                         |
