@@ -11,6 +11,8 @@ toc_footers:
 includes:
   - v3_introduction
   - v3_authentication
+  - v3_shipping_methods
+  - v3_shipping_methods.list
   - v3_waybills
   - v3_waybills.create
   - v3_waybills.get
