@@ -9,7 +9,7 @@ The payload for each webhook event will include information about the related AP
 
 To prevent your application against a replay attack, we recommend that you verify all incoming webhook events by validating our unique signature, X-ALLINE-SIGNATURE, in the headers.
 
-The signature is a JSON web token that can be decoded with the value of your secret_key. You can get it from your account representative. It will always be a hash string starting with webh_.
+The signature is a token that can be decoded with the value of your secret_key. You can get it from your account representative. It will always be a hash string starting with webh_.
 
 
  
