@@ -54,7 +54,7 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint confirms a new AirWaybill in ALL<span style="color: #d83636;">IN</span>E cross border after all parcels have been added through the add-parcel endpoint and the waybill is ready to be created and processed. 
+This endpoint confirms a new AirWaybill in CBE tool after all parcels have been added through the add-parcel endpoint and the waybill is ready to be created and processed. 
 
 ### HTTP Request
 

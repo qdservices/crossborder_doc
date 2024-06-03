@@ -83,7 +83,7 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint creates a new Parcel and adds it to the given Waybill pre alert in the <span class="font-weight: bold">ALL<span style="color: #d83636;">IN</span>E</span> cross border system. 
+This endpoint creates a new Parcel and adds it to the given Waybill pre alert in the CBE system. 
 
 ### HTTP Request
 
