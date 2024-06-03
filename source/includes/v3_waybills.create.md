@@ -54,7 +54,7 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">ALL<span style="color: #d83636;">IN</span>E</span> cross border. 
+This endpoint creates a new Waybill pre alert in the CBE tool. 
 
 ### HTTP Request
 
