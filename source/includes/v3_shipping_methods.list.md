@@ -2,7 +2,7 @@
 
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/shipping_methods"
+curl "https://cbe.vdhelm.com/api/v3/shipping_methods"
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
 ```
@@ -52,5 +52,5 @@ This endpoint retrieves all Shipping Methods.
 
 ### HTTP Request
 
-<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v3/shipping_methods`
+<span class="http-verb get">GET</span> `https://cbe.vdhelm.com/api/v3/shipping_methods`
 

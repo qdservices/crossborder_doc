@@ -4,10 +4,6 @@ title: API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell 
 
-toc_footers:
-  - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 1</a>
-  - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 2</a>
-
 includes:
   - v3_introduction
   - v3_authentication

@@ -1,7 +1,7 @@
 ## Retrieve a Specific Waybill
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
+curl "https://cbe.vdhelm.com/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
 ```
@@ -56,10 +56,10 @@ This endpoint retrieves a specific Waybill.
 
 ### HTTP Request
 
-<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>`
+<span class="http-verb get">GET</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>`
 
 ### URL Parameters
 
-| Parameter | Description                                                                                                                                                                       |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ID        | Alline Waybill ID provided when creating the <span class="object">Waybill</span>. The ID was given at creation of the waybill and was either generated or is the given reference. |
+| Parameter | Description                                                                                                                                                                    |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ID        | VDH Waybill ID provided when creating the <span class="object">Waybill</span>. The ID was given at creation of the waybill and was either generated or is the given reference. |

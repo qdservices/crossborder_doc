@@ -3,7 +3,7 @@
 A Waybill can only be removed when the state is `pre_upload`, `created` or `noa_received`
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
+curl "https://cbe.vdhelm.com/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
   -X DELETE
   -H "Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
@@ -18,7 +18,7 @@ Content-Type:application/json;charset=UTF-8
 
 ### HTTP Request
 
-<span class="http-verb delete">DELETE</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/`
+<span class="http-verb delete">DELETE</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>/`
 
 ### URL Parameters
 

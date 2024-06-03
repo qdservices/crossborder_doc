@@ -1,7 +1,7 @@
 ## Confirm a Waybill upload
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/confirm"
+curl "https://cbe.vdhelm.com/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/confirm"
   -X PUT
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
@@ -58,7 +58,7 @@ This endpoint confirms a new AirWaybill in ALL<span style="color: #d83636;">IN</
 
 ### HTTP Request
 
-<span class="http-verb put">PUT</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/confirm`
+<span class="http-verb put">PUT</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>/confirm`
 
 ### URL Parameters
 

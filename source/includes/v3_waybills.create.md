@@ -1,7 +1,7 @@
 ## Create a Waybill
 
 ```shell
-curl "https://crossborder.omniship.eu/api/v3/waybills"
+curl "https://cbe.vdhelm.com/api/v3/waybills"
   -X POST
   -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
@@ -58,7 +58,7 @@ This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">
 
 ### HTTP Request
 
-<span class="http-verb post">POST</span> `https://crossborder.omniship.eu/api/v3/waybills`
+<span class="http-verb post">POST</span> `https://cbe.vdhelm.com/api/v3/waybills`
 
 ### Arguments
 
@@ -71,8 +71,8 @@ This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">
 | grossWeight             | <span class="type">float</span>         | <span class="required">required</span> The given gross weight for the shipment. Should be the same as the gross weight on the Air Waybill copy.                                                                                                                    |
 | parcelCount             | <span class="type">integer</span>       | <span class="required">required</span> The number of parcels contained in the shipment.                                                                                                                                                                            |
 | bigBagCount             | <span class="type">integer</span>       | <span class="required">required</span> The number of bigBags/Boxes/Units contained in the shipment.                                                                                                                                                                |
-| destinationFlightNumber | <span class="type">string</span>        | <span class="optional">optional</span> The incoming flight number to the destination airport. For the Alline warehouse the destination airport is Schiphol (AMS).                                                                                                  |
+| destinationFlightNumber | <span class="type">string</span>        | <span class="optional">optional</span> The incoming flight number to the destination airport. For the VDH warehouse the destination airport is Schiphol (AMS).                                                                                                     |
 | eta                     | <span class="type">date</span>          | <span class="optional">optional</span> The estimated arrival date at the destination airport. The date should be in the timezone of the destination in format `yyyy-mm-dd`.                                                                                        |
-| declarationType         | <span class="type">string</span>        | <span class="optional">optional</span> Indicates if Alline should process the customs declaration for this shipment. Valid values are `full`, `partial`, `none`  Default is `full`.                                                                                | 
+| declarationType         | <span class="type">string</span>        | <span class="optional">optional</span> Indicates if VDH should process the customs declaration for this shipment. Valid values are `full`, `partial`, `none`  Default is `full`.                                                                                   | 
 | waybillDocument         | <span class="type">base64_string</span> | <span class="required_if">Required If</span> `waybill_type` is `air` base64 encoded pdf file of the Waybill Document associated with the shipment.                                                                                                                 |
 
