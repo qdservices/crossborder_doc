@@ -58,7 +58,7 @@ This endpoint confirms a new AirWaybill in ALL<span style="color: #d83636;">IN</
 
 ### HTTP Request
 
-<span class="http-verb put">PUT</span> `https://crossborder.omniship.eu/api/v3/waybills/<ID>/confirm`
+<span class="http-verb put">PUT</span> `/api/v3/waybills/<ID>/confirm`
 
 ### URL Parameters
 

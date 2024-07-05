@@ -52,5 +52,5 @@ This endpoint retrieves all Shipping Methods.
 
 ### HTTP Request
 
-<span class="http-verb get">GET</span> `https://crossborder.omniship.eu/api/v3/shipping_methods`
+<span class="http-verb get">GET</span> `/api/v3/shipping_methods`
 

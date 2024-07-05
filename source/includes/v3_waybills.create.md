@@ -58,7 +58,7 @@ This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">
 
 ### HTTP Request
 
-<span class="http-verb post">POST</span> `https://crossborder.omniship.eu/api/v3/waybills`
+<span class="http-verb post">POST</span> `/api/v3/waybills`
 
 ### Arguments
 

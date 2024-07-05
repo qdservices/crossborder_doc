@@ -18,7 +18,7 @@ Content-Type:application/json;charset=UTF-8
 
 ### HTTP Request
 
-<span class="http-verb delete">DELETE</span> `https://crossborder.omniship.eu/api/v3/waybills/<WaybillID>/parcels/<ParcelID>`
+<span class="http-verb delete">DELETE</span> `/api/v3/waybills/<WaybillID>/parcels/<ParcelID>`
 
 ### URL Parameters
 
