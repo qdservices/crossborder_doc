@@ -75,7 +75,7 @@ This endpoint creates a new Waybill pre alert in the CBE tool.
 
 ### HTTP Request
 
-<span class="http-verb post">POST</span> `https://cbe.vdhelm.com/api/v3/parcels`
+<span class="http-verb post">POST</span> `/api/v3/parcels`
 
 ### Arguments
 

@@ -58,7 +58,7 @@ This endpoint confirms a new AirWaybill in CBE tool after all parcels have been 
 
 ### HTTP Request
 
-<span class="http-verb put">PUT</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>/confirm`
+<span class="http-verb put">PUT</span> `/api/v3/waybills/<ID>/confirm`
 
 ### URL Parameters
 

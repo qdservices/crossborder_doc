@@ -87,7 +87,7 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 
 ### HTTP Request
 
-<span class="http-verb post">POST</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>/parcels`
+<span class="http-verb post">POST</span> `/api/v3/waybills/<ID>/parcels`
 
 ### URL Parameters
 

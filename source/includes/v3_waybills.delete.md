@@ -18,7 +18,7 @@ Content-Type:application/json;charset=UTF-8
 
 ### HTTP Request
 
-<span class="http-verb delete">DELETE</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>/`
+<span class="http-verb delete">DELETE</span> `/api/v3/waybills/<ID>/`
 
 ### URL Parameters
 

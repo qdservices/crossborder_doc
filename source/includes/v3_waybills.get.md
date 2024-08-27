@@ -56,7 +56,7 @@ This endpoint retrieves a specific Waybill.
 
 ### HTTP Request
 
-<span class="http-verb get">GET</span> `https://cbe.vdhelm.com/api/v3/waybills/<ID>`
+<span class="http-verb get">GET</span> `/api/v3/waybills/<ID>`
 
 ### URL Parameters
 
