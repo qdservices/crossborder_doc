@@ -1,13 +1,13 @@
-## Webhooks waybill.status.changed
+## Webhooks waybill.status.updated
 
 When your shipment's tracking status changed, you'll get the event payload as below:
 
-waybill.state.changed
+waybill.state.updated
 
 <pre style="float:left">
 <code>
 {
-  "event_type": "waybill.state.changed",
+  "event_type": "waybill.state.updated",
   "resource_type": "waybill",
   "resource_id": "4dcdea18-afb4-4c38-8541-9b83056a5667",
   "waybill_state": {
