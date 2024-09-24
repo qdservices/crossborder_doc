@@ -1,12 +1,12 @@
-## Webhooks parcel.status.changed
+## Webhooks parcel.status.updated
 
 When your shipment's tracking status changed, you'll get the event payload as below:
 
-parcel.state.changed
+parcel.state.updated
 <pre style="float: left">
 <code>
 {
-  "event_type": "parcel.state.changed",
+  "event_type": "parcel.state.updated",
   "resource_type": "parcel",
   "resource_id": "a51133c1-a0a4-4867-9507-18a6082aaacc",
   "parcel_state": {
