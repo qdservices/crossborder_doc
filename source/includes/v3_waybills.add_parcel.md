@@ -31,7 +31,8 @@ curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b
 		"quantity": 4,
 		"weight": 22.95,
 		"invoiceCurrency": "EUR",
-		"invoiceAmount": 119.99
+		"invoiceAmount": 119.99,
+		"freightValue": 3.30
 	}],
 	"shippingMethod": "DPD145"
   }'
@@ -76,7 +77,8 @@ Content-Type:application/json;charset=UTF-8
         "quantity": "4",
         "weight": 22.95,
         "invoiceCurrency": "EUR",
-        "invoiceAmount": "119.99"
+        "invoiceAmount": "119.99",
+        "freightValue": "3.30"
       }
     ]
   }
@@ -195,6 +197,11 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 				<div class="td"><p><code>invoiceAmount</code></p></div>
 				<div class="td"><p><span>float</span></p></div>
 				<div class="td"><p><span class="required">required</span> Total Value of the item line</p></div>
+			</div>
+      <div class="tr">
+				<div class="td"><p><code>freightValue</code></p></div>
+				<div class="td"><p><span>float</span></p></div>
+				<div class="td"><p><span class="optional">optional</span> Freight Value of the item line</p></div>
 			</div>
       <div class="tr">
 				<div class="td"><p><code>sku</code></p></div>

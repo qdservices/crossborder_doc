@@ -31,7 +31,8 @@ curl "https://crossborder.omniship.eu/api/v3/parcels"
           "quantity": 4,
           "weight": 22.95,
           "invoiceCurrency": "EUR",
-          "invoiceAmount": 119.99
+          "invoiceAmount": 119.99,
+          "freightValue": 3.30,
         }],
         "shippingMethod": "DPD145"
       }'

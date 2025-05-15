@@ -13,6 +13,8 @@ parcel.state.updated
     "id": "a51133c1-a0a4-4867-9507-18a6082aaacc",
     "finalMileTrackingNumber": "1Z1V510W6898496192",
     "parcelState": "created",
+    "freightValue": 3.30,
+    "currency": "EUR",
     "inboundUtc": null,
     "inboundLocalTime": null,
     "releasedUtc": null
