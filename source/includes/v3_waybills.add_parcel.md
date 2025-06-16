@@ -122,7 +122,7 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 			<div class="tr">
 				<div class="td"><p><code>name</code></p></div>
 				<div class="td"><p><span>string</span></p></div>
-				<div class="td"><p><span class="required">required</span> Address contact name. Maximum: 35 characters </p></div>
+				<div class="td"><p><span class="required">required</span> Address contact name. Maximum: 70 characters </p></div>
 			</div>
 			<div class="tr">
 				<div class="td"><p><code>street</code></p></div>
