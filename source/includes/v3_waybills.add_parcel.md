@@ -25,6 +25,7 @@ curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b
 		"city": "Niguelas",
 		"countryCode": "ES"
 	},
+	"packageWeight": 23.5,
 	"items": [{
 		"hsCode": "950691",
 		"description": "DUMBBELL SET",
@@ -70,6 +71,7 @@ Content-Type:application/json;charset=UTF-8
       "city": "Niguelas",
       "countryCode": "ES"
     },
+    "packageWeight": 23.5,
     "items": [
       {
         "hsCode": "950691",
@@ -106,6 +108,7 @@ This endpoint creates a new Parcel and adds it to the given Waybill pre alert in
 | bigBagBarcode           | <span class="type">string</span> | <span class="required">required</span> Barcode of the bag/box/unit containing the parcel(s). If there is only one parcel and no containing unit with a barcode, the finalMileTrackingNumber can be used instead. |
 | sellerDetails           | <span class="type">object</span> | <span class="required">required</span> <span class="object">Address</span> object that should be used as sender address.                                                                                         |
 | buyerDetails            | <span class="type">object</span> | <span class="required">required</span> <span class="object">Address</span> object that should be used as buyer address.                                                                                          |
+| packageWeight           | <span class="type">float</span>  | <span class="required">required</span> The total weight of the package.                                                                                                                                          |
 | items                   | <span class="type">array</span>  | <span class="required">required</span> Array of <span class="object">Customs Item</span> objects with details of the products in the shipment for customs.                                                       |
 | shippingMethod          | <span class="type">string</span> | <span class="required">required</span> Shipping Method                                                                                                                                                           |
 
