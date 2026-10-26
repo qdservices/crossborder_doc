@@ -85,9 +85,6 @@ Content-Type:application/json;charset=UTF-8
         "invoiceCurrency": "EUR",
         "invoiceAmount": "119.99",
         "freightValue": "3.30",
-        "sku": "DB-SET-4X5,DB-RACK-1",
-        "manufacturerProductId": "MPN-4471,MPN-4480",
-        "standardProductId": "8712345678906,",
         "productPids": [
           { "sku": "DB-SET-4X5", "manufacturerProductId": "MPN-4471", "standardProductId": "8712345678906" },
           { "sku": "DB-RACK-1", "manufacturerProductId": "MPN-4480", "standardProductId": null }
@@ -157,10 +154,7 @@ Names, streets and cities accept printable ASCII characters except `;` and `~`. 
 | `invoiceCurrency`       | <span class="type">string</span> | <span class="required">required</span> The currency of the item value, as ISO 4217 code (for example `EUR`). |
 | `invoiceAmount`         | <span class="type">float</span>  | <span class="required">required</span> Total value of the item line, at least 0.01. |
 | `freightValue`          | <span class="type">float</span>  | <span class="optional">optional</span> Freight value of the item line. |
-| `productPids`           | <span class="type">array</span>  | <span class="optional">optional</span> The products on this item: an array of 1 to 33 <span class="object">Product PID</span> objects. Required from 1 November 2026, unless you send the deprecated string fields below. |
-| `sku`                   | <span class="type">string</span> | <span class="deprecated">deprecated</span> Use `productPids`. The merchant product ids (C127) of the item's products, comma separated. |
-| `manufacturerProductId` | <span class="type">string</span> | <span class="deprecated">deprecated</span> Use `productPids`. The manufacturer product ids (C128), comma separated, in the same order as `sku`. |
-| `standardProductId`     | <span class="type">string</span> | <span class="deprecated">deprecated</span> Use `productPids`. The standard product ids (C129), comma separated, in the same order as `sku`. |
+| `productPids`           | <span class="type">array</span>  | <span class="required">required</span> from 1 November 2026, optional before. The products on this item: an array of 1 to 33 <span class="object">Product PID</span> objects. |
 
 ### Product PID definitions:
 
@@ -174,18 +168,8 @@ From 1 November 2026 EU customs requires product identification on every e-comme
 
 `sku` and `manufacturerProductId` hold at most 70 printable ASCII characters each, without `,`, `;` and `"`. No other keys are accepted in a product, and a product needs at least one of the three values.
 
-### Deprecated string fields
-
-`sku`, `manufacturerProductId` and `standardProductId` on the item are still accepted. Several products are comma separated and **aligned by position**: product *n* is the *n*-th value of each field. Every field that holds a value must have the same number of positions, at most 33, each value at most 70 characters. An empty position, `null` or `Y081` in `standardProductId` means that product has no C129.
-
-```json
-"sku": "DB-SET-4X5,DB-RACK-1",
-"manufacturerProductId": "MPN-4471,MPN-4480",
-"standardProductId": "8712345678906,"
-```
-
 <aside class="warning">
-  Send either <code>productPids</code> or the string fields on an item, not both: an item with <code>productPids</code> and any string field with a value is refused with <code>422</code>. A string field sent as <code>null</code> or <code>""</code> counts as not sent.
+  Product identification is only accepted as <code>productPids</code>. An item with a <code>sku</code>, <code>manufacturerProductId</code> or <code>standardProductId</code> field of its own is refused with <code>422</code>.
 </aside>
 
-In the response every item carries both: `productPids` (always an array, empty when the item has no product identification) and the string fields, comma joined from the products as above.
+In the response every item carries its products as `productPids`: an empty array when the item has no product identification.
