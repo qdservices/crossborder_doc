@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 1</a>
-  - <a href='https://developer.crossborder.omniship.eu/v1'>Go to version 2</a>
+  - <a href='https://developer.crossborder.omniship.eu/v2'>Go to version 2</a>
 
 includes:
   - v3_introduction
@@ -23,7 +23,7 @@ includes:
   - v3_webhooks
   - v3_webhooks.parcel_status_changed
   - v3_webhooks.waybill_status_changed
-  - errors
+  - v3_errors
 
 search: true
 

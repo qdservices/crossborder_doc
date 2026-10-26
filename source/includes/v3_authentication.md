@@ -5,7 +5,7 @@
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "https://crossborder.omniship.eu/api/v3/<resource>"
-  -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
+  -H "Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
 ```
 
@@ -15,7 +15,9 @@ curl "https://crossborder.omniship.eu/api/v3/<resource>"
 
 In order to authenticate properly, please put <code>Authorization: Bearer &lt;API Access Token&gt;</code> in the request header. <span style="font-weight: bold">ALL<span style="color: #d83636;">IN</span>E</span> expects for the API access token to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv`
+`Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv`
+
+A request without a valid token is answered with `401 Unauthorized`. The API accepts up to 10,000 requests per minute per token; above that it answers `429 Too Many Requests`.
 
 <aside class="warning">
 You must replace <code><strong>FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv</strong></code> with your personal API key.

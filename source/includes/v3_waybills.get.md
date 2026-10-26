@@ -2,7 +2,7 @@
 
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
-  -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
+  -H "Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
 ```
 
@@ -33,7 +33,8 @@ Content-Type:application/json;charset=UTF-8
       "code": "MU",
       "copyNumber": "60318215"
     },
-    "destinationFlightNumber": "KE0925",
+    "destinationFlightNumber": "CK210",
+    "flight_date": "2024-05-26",
     "eta": "2024-05-26T00:00:00+02:00",
     "declarationType": "full",
     "parcels": [

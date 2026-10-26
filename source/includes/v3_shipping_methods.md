@@ -13,21 +13,18 @@
     "country_full": "Germany",
     "is_pickup": false
   },
-  "customer": "Acme",
-  "print_label": false
+  "customer": "Acme"
 }
     
 ```
 
-A Shipping Method represents the destination that can be assigned to parcels by using the `name` attribute in the pre-alert upload.
+A Shipping Method represents the destination that can be assigned to parcels by using the `name` attribute as `shippingMethod` when adding a parcel. A parcel can only use a shipping method whose pricing agreement is valid today.
 
 | Attribute     | Type                            | Description                                                             |
 |---------------|---------------------------------|-------------------------------------------------------------------------|
-| `id`          | <span class=type>integer</span> | Unique ID of a Shipping Method. This is used as an identifier.          |
 | `name`        | <span class=type>string</span>  | Unique code to identify a Shipping Method.                              |
-| `address`     | <span class=type>Object</span>  | Address associated with the Shipping Method.                            |
+| `address`     | <span class=type>Object</span>  | Address associated with the Shipping Method: `company`, `line_1`, `city`, `country` (Alpha 2), `country_full` and `is_pickup`. |
 | `customer`    | <span class=type>string</span>  | Customer associated with the Shipping Method.                           |
-| `print_label` | <span class=type>boolean</span> | Indicates if final mile relabeling is enabled for this Shipping Method. |
 
 
 
