@@ -33,9 +33,10 @@ curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b
 		"invoiceCurrency": "EUR",
 		"invoiceAmount": 119.99,
 		"freightValue": 3.30,
-		"sku": "DB-SET-4X5",
-		"manufacturerProductId": "MPN-4471",
-		"standardProductId": "8712345678906"
+		"productPids": [
+			{ "sku": "DB-SET-4X5", "manufacturerProductId": "MPN-4471", "standardProductId": "8712345678906" },
+			{ "sku": "DB-RACK-1", "manufacturerProductId": "MPN-4480", "standardProductId": null }
+		]
 	}],
 	"shippingMethod": "DPD145"
   }'
@@ -84,9 +85,13 @@ Content-Type:application/json;charset=UTF-8
         "invoiceCurrency": "EUR",
         "invoiceAmount": "119.99",
         "freightValue": "3.30",
-        "sku": "DB-SET-4X5",
-        "manufacturerProductId": "MPN-4471",
-        "standardProductId": "8712345678906"
+        "sku": "DB-SET-4X5,DB-RACK-1",
+        "manufacturerProductId": "MPN-4471,MPN-4480",
+        "standardProductId": "8712345678906,",
+        "productPids": [
+          { "sku": "DB-SET-4X5", "manufacturerProductId": "MPN-4471", "standardProductId": "8712345678906" },
+          { "sku": "DB-RACK-1", "manufacturerProductId": "MPN-4480", "standardProductId": null }
+        ]
       }
     ]
   }
@@ -152,12 +157,35 @@ Names, streets and cities accept printable ASCII characters except `;` and `~`. 
 | `invoiceCurrency`       | <span class="type">string</span> | <span class="required">required</span> The currency of the item value, as ISO 4217 code (for example `EUR`). |
 | `invoiceAmount`         | <span class="type">float</span>  | <span class="required">required</span> Total value of the item line, at least 0.01. |
 | `freightValue`          | <span class="type">float</span>  | <span class="optional">optional</span> Freight value of the item line. |
-| `sku`                   | <span class="type">string</span> | <span class="required">required</span> from 1 November 2026, optional before. Merchant product identification (M-PID, C127): the webshop SKU or ASIN. Max 70 characters. |
-| `manufacturerProductId` | <span class="type">string</span> | <span class="required">required</span> from 1 November 2026, optional before. Manufacturer product identification (NS-PID, C128): the model or part number. Max 70 characters. |
-| `standardProductId`     | <span class="type">string</span> | <span class="optional">optional</span> Standardised product identification (S-PID, C129): a valid EAN/GTIN-8/12/13/14, UPC or ISBN. Leave it out, or send `Y081`, when the product has none. |
+| `productPids`           | <span class="type">array</span>  | <span class="optional">optional</span> The products on this item: an array of 1 to 33 <span class="object">Product PID</span> objects. Required from 1 November 2026, unless you send the deprecated string fields below. |
+| `sku`                   | <span class="type">string</span> | <span class="deprecated">deprecated</span> Use `productPids`. The merchant product ids (C127) of the item's products, comma separated. |
+| `manufacturerProductId` | <span class="type">string</span> | <span class="deprecated">deprecated</span> Use `productPids`. The manufacturer product ids (C128), comma separated, in the same order as `sku`. |
+| `standardProductId`     | <span class="type">string</span> | <span class="deprecated">deprecated</span> Use `productPids`. The standard product ids (C129), comma separated, in the same order as `sku`. |
 
-`sku` and `manufacturerProductId` accept printable ASCII characters, without `;` and `"`.
+### Product PID definitions:
 
-<aside class="notice">
-  From 1 November 2026 EU customs requires product identification on every e-commerce declaration line. A line that holds several products lists their ids comma separated, in the same order in each field, for example <code>"sku": "SKU-1,SKU-2"</code>.
+From 1 November 2026 EU customs requires product identification on every e-commerce declaration line: for every product its merchant product id (C127) and its manufacturer product id (C128), and its standard product id (C129) when it has one. A product without a C129 is declared with Y081.
+
+| Field Name              | Type                             | Description |
+|-------------------------|----------------------------------|-------------|
+| `sku`                   | <span class="type">string</span> | <span class="required">required</span> from 1 November 2026, optional before. Merchant product identification (M-PID, C127): the webshop SKU or ASIN. |
+| `manufacturerProductId` | <span class="type">string</span> | <span class="required">required</span> from 1 November 2026, optional before. Manufacturer product identification (NS-PID, C128): the model or part number. |
+| `standardProductId`     | <span class="type">string</span> | <span class="optional">optional</span> Standardised product identification (S-PID, C129): one valid EAN/GTIN-8/12/13/14, UPC or ISBN. When the product has none, leave the key out or send `null`, `""` or `"null"`. |
+
+`sku` and `manufacturerProductId` hold at most 70 printable ASCII characters each, without `,`, `;` and `"`. No other keys are accepted in a product, and a product needs at least one of the three values.
+
+### Deprecated string fields
+
+`sku`, `manufacturerProductId` and `standardProductId` on the item are still accepted. Several products are comma separated and **aligned by position**: product *n* is the *n*-th value of each field. Every field that holds a value must have the same number of positions, at most 33, each value at most 70 characters. An empty position, `null` or `Y081` in `standardProductId` means that product has no C129.
+
+```json
+"sku": "DB-SET-4X5,DB-RACK-1",
+"manufacturerProductId": "MPN-4471,MPN-4480",
+"standardProductId": "8712345678906,"
+```
+
+<aside class="warning">
+  Send either <code>productPids</code> or the string fields on an item, not both: an item with <code>productPids</code> and any string field with a value is refused with <code>422</code>. A string field sent as <code>null</code> or <code>""</code> counts as not sent.
 </aside>
+
+In the response every item carries both: `productPids` (always an array, empty when the item has no product identification) and the string fields, comma joined from the products as above.
