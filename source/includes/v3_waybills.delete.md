@@ -1,6 +1,6 @@
 ## Delete a Waybill
 
-A Waybill can only be removed when the state is `pre_upload`, `created` or `noa_received`
+A Waybill can only be removed while its status is `pre_upload` or `created`. In any other status the request is answered with `403 Forbidden`.
 
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667"
@@ -18,7 +18,7 @@ Content-Type:application/json;charset=UTF-8
 
 ### HTTP Request
 
-<span class="http-verb delete">DELETE</span> `/api/v3/waybills/<ID>/`
+<span class="http-verb delete">DELETE</span> `/api/v3/waybills/<ID>`
 
 ### URL Parameters
 

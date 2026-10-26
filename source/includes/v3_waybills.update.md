@@ -3,7 +3,7 @@
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/waybills/4dcdea18-afb4-4c38-8541-9b83056a5667/confirm"
   -X PUT
-  -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
+  -H "Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
   
 ```
@@ -35,7 +35,8 @@ Content-Type:application/json;charset=UTF-8
       "code": "MU",
       "copyNumber": "60318215"
     },
-    "destinationFlightNumber": "KE0925",
+    "destinationFlightNumber": "CK210",
+    "flight_date": "2024-05-26",
     "eta": "2024-05-26T00:00:00+02:00",
     "declarationType": "full",
     "parcels": [
@@ -55,6 +56,15 @@ Content-Type:application/json;charset=UTF-8
 ```
 
 This endpoint confirms a new AirWaybill in ALL<span style="color: #d83636;">IN</span>E cross border after all parcels have been added through the add-parcel endpoint and the waybill is ready to be created and processed. 
+
+The waybill is confirmed only when:
+
+* it is still in status `pre_upload` (otherwise: `The waybill is already confirmed.`);
+* the number of bags added (distinct `bigBagBarcode` values) equals the `bigBagCount` given at creation;
+* every parcel has a shipping method, and all parcels in one bag share the same shipping method (unless your account allows mixed bags);
+* the transaction types fit the parcel values: when the parcels of one buyer are worth more than €150 together they must be `H2C`, with a 10 digit HS code on every item and an `invoiceNumber`.
+
+Otherwise the request is answered with `422`. Errors about a parcel are keyed by its finalMileTrackingNumber, for example `parcels.1Z1V510W6898496192.shippingMethod`, `parcels.1Z1V510W6898496192.transactionType`, `parcels.1Z1V510W6898496192.invoiceNumber` or `parcels.1Z1V510W6898496192.items.0.hsCode`.
 
 ### HTTP Request
 

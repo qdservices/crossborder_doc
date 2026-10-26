@@ -3,7 +3,7 @@
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/waybills"
   -X POST
-  -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
+  -H "Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
   -d '{
         "masterWaybillNumber": "112-60318215",
@@ -46,15 +46,20 @@ Content-Type:application/json;charset=UTF-8
       "code": "MU",
       "copyNumber": "60318215"
     },
-    "destinationFlightNumber": "KE0925",
-    "eta": "2024-05-25T22:00:00.000000Z",
+    "destinationFlightNumber": "CK210",
+    "flight_date": "2024-05-26",
+    "eta": "2024-05-26T00:00:00+02:00",
     "declarationType": "full",
     "parcels": []
   }
 }
 ```
 
-This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">ALL<span style="color: #d83636;">IN</span>E</span> cross border. 
+This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">ALL<span style="color: #d83636;">IN</span>E</span> cross border. The waybill starts in status `pre_upload`: add its parcels with [Create and add a Parcel to a Waybill](#create-and-add-a-parcel-to-a-waybill), then [confirm](#confirm-a-waybill-upload) it.
+
+Sending the same `masterWaybillNumber` and `transportType` again before any parcel of the waybill has been uploaded updates the existing waybill instead of creating a second one.
+
+Unless `declarationType` is `none`, the request is refused with `402 Payment Required` when your clearance balance is depleted.
 
 ### HTTP Request
 
@@ -62,17 +67,33 @@ This endpoint creates a new Waybill pre alert in <span style="font-weight:bold">
 
 ### Arguments
 
-| Attribute               | Type                                    | Description                                                                                                                                                                                                                                                        |
-|-------------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| masterWaybillNumber     | <span class="type">string</span>        | <span class="required">required</span> Unique number of the waybill. This number cannot already exist in the database for the same customer.                                                                                                                       |
-| reference               | <span class="type">string</span>        | <span class="optional">optional</span> Unique reference/id of the waybill. The reference cannot already exist in the database for the same customer. If set the reference will be the ID to reference the Waybill in all requests further in the Waybill lifecycle |
-| customerCode            | <span class="type">string</span>        | The unique customer code. This code should reflect a customer code in the database. Only <span class="required_if">required if</span> account has sub-customers.                                                                                                   | 
-| transportType           | <span class="type">string</span>        | <span class="required">required</span> The type of waybill. Valid values are `air`, `road`, `train`, `other`                                                                                                                                                       |
-| grossWeight             | <span class="type">float</span>         | <span class="required">required</span> The given gross weight for the shipment. Should be the same as the gross weight on the Air Waybill copy.                                                                                                                    |
-| parcelCount             | <span class="type">integer</span>       | <span class="required">required</span> The number of parcels contained in the shipment.                                                                                                                                                                            |
-| bigBagCount             | <span class="type">integer</span>       | <span class="required">required</span> The number of bigBags/Boxes/Units contained in the shipment.                                                                                                                                                                |
-| destinationFlightNumber | <span class="type">string</span>        | <span class="optional">optional</span> The incoming flight number to the destination airport. For the Alline warehouse the destination airport is Schiphol (AMS).                                                                                                  |
-| eta                     | <span class="type">date</span>          | <span class="optional">optional</span> The estimated arrival date at the destination airport. The date should be in the timezone of the destination in format `yyyy-mm-dd`.                                                                                        |
-| declarationType         | <span class="type">string</span>        | <span class="optional">optional</span> Indicates if Alline should process the customs declaration for this shipment. Valid values are `full`, `partial`, `none`  Default is `full`.                                                                                | 
-| waybillDocument         | <span class="type">base64_string</span> | <span class="required_if">Required If</span> `waybill_type` is `air` base64 encoded pdf file of the Waybill Document associated with the shipment.                                                                                                                 |
+| Attribute               | Type                                    | Description |
+|-------------------------|-----------------------------------------|-------------|
+| masterWaybillNumber     | <span class="type">string</span>        | <span class="required">required</span> Number of the waybill. It cannot already exist for the same customer once parcels have been uploaded for it. If `transportType` is `air` it must have the format `123-12345678`, and the first three digits must be a known airline prefix. |
+| reference               | <span class="type">string</span>        | <span class="optional">optional</span> Your own unique reference of the waybill. It cannot already exist for the same customer. If set, the reference is the ID of the Waybill in all further requests; otherwise an ID is generated. |
+| customerCode            | <span class="type">string</span>        | The code of the customer the waybill belongs to. Only <span class="required_if">required if</span> your account may create waybills for several customers. |
+| transportType           | <span class="type">string</span>        | <span class="required">required</span> The transport type of the waybill. Valid values are `air`, `road`, `train`, `sea`. |
+| grossWeight             | <span class="type">float</span>         | <span class="required">required</span> The gross weight for the shipment in kg, at least 1. Should be the same as the gross weight on the Air Waybill copy. |
+| parcelCount             | <span class="type">integer</span>       | <span class="required">required</span> The number of parcels contained in the shipment, at least 1. |
+| bigBagCount             | <span class="type">integer</span>       | <span class="required">required</span> The number of bigBags/Boxes/Units contained in the shipment, at least 1. The waybill can only be confirmed once this many bags have been added. |
+| destinationFlightNumber | <span class="type">string</span>        | <span class="optional">optional</span> The incoming flight number to the destination airport, for example `CK210` or `KE0925`. For the Alline warehouse the destination airport is Schiphol (AMS). |
+| eta                     | <span class="type">date</span>          | <span class="optional">optional</span> The estimated arrival date at the destination airport, in the timezone of the destination, in format `yyyy-mm-dd`. |
+| declarationType         | <span class="type">string</span>        | <span class="optional">optional</span> Indicates if Alline should process the customs declaration for this shipment. Valid values are `full`, `partial`, `none`. Default is `full`. `partial` and `none` are only accepted for accounts allowed to upload without a full customs declaration. |
+| waybillDocument         | <span class="type">base64_string</span> | <span class="required">required</span> Base64 encoded PDF, JPG or PNG file of the Waybill Document of the shipment. |
+| unionGoods              | <span class="type">boolean</span>       | <span class="required_if">Required if</span> `declarationType` is `partial` or `none`. Whether the goods Alline does not declare are union goods (goods already in free circulation in the EU). |
+| unionProof              | <span class="type">base64_string</span> | <span class="required_if">Required if</span> `unionGoods` is `true`. Base64 encoded Excel or CSV file listing the parcel ids and their MRN numbers. |
+| onwardTransit           | <span class="type">object</span>        | <span class="optional">optional</span> <span class="object">Onward Transit</span> object: forward the undeclared goods on a T1 transit document. Only allowed when `declarationType` is `partial` or `none` and `unionGoods` is `false`. |
 
+### Onward Transit object definitions:
+
+Every field you leave out is taken from the T1 defaults stored for your account; when all defaults are set, an empty object `{}` is enough.
+
+| Field Name            | Type                             | Description |
+|-----------------------|----------------------------------|-------------|
+| `consignee`           | <span class="type">object</span> | <span class="required">required</span> The consignee of the T1, with `name` (required, max 255), `street` (required, max 255), `postalCode` (optional, max 20), `city` (required, max 255), `country` (required, Alpha 2 country code) and `eori` (optional, max 20). |
+| `officeOfDestination` | <span class="type">string</span> | <span class="required">required</span> The customs office of destination: an 8-character office reference, the country code followed by 6 characters, as listed in the customs office list (codebook table 141). |
+| `goodsDescription`    | <span class="type">string</span> | <span class="required">required</span> Description of the goods, max 255 characters. |
+| `hsCode`              | <span class="type">string</span> | <span class="required">required</span> HS code of the goods, 6 to 10 digits. |
+| `etd`                 | <span class="type">date</span>   | <span class="optional">optional</span> Estimated departure date. |
+| `eta`                 | <span class="type">date</span>   | <span class="optional">optional</span> Estimated arrival date, not before `etd`. |
+| `transportCosts`      | <span class="type">string</span> | <span class="optional">optional</span> Transport costs, max 50 characters. |

@@ -3,7 +3,7 @@
 
 ```shell
 curl "https://crossborder.omniship.eu/api/v3/shipping_methods"
-  -H "Authorization: FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
+  -H "Authorization: Bearer FkihCtzyXWvutSRUaaEupN8hvABcDefgHI6lJKvv"
   -H "Content-Type: application/json"
 ```
 
@@ -26,8 +26,7 @@ Content-Type:application/json;charset=UTF-8
 				"country_full": "Germany",
 				"is_pickup": false
 			},
-			"customer": "Acme",
-			"print_label": false
+			"customer": "Acme"
 		},
 		{
 			"name": "DEDP",
@@ -39,8 +38,7 @@ Content-Type:application/json;charset=UTF-8
 				"country_full": "Germany",
 				"is_pickup": false
 			},
-			"customer": "Acme",
-			"print_label": false
+			"customer": "Acme"
 		},
     {"..."},
     {"..."}
@@ -48,7 +46,7 @@ Content-Type:application/json;charset=UTF-8
 }
 ```
 
-This endpoint retrieves all Shipping Methods.
+This endpoint retrieves all Shipping Methods of your account.
 
 ### HTTP Request
 

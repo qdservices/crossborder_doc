@@ -1,20 +1,15 @@
 # Webhooks
 
-This guide will walk you through the webhooks functionality to obtain messages about shipment events. Messages are sent on triggering the following events:
+<span style="font-weight: bold">ALL<span style="color: #d83636;">IN</span>E</span> can send webhook events to notify your application when a waybill or parcel changes status, so you do not need to poll our API. Your account representative sets up the URL that receives the events.
 
-<span style="font-weight: bold">ALL<span style="color: #d83636;">IN</span>E</span> can send webhook events to notify your application when a particular event has occurred. 
-If you subscribe to the webhook to receive shipment status updates, you will be notified about the new status without polling our API.
+Each event is sent as an HTTP `POST` with a JSON body. Your endpoint should answer with a `2xx` status within 3 seconds; otherwise the event is sent again, up to 3 attempts in total, with an increasing delay between them.
 
-The payload for each webhook event will include information about the related API response. Your provided endpoint should be set up to receive an HTTP POST request and must always return a 200 HTTP response.|
+### Verifying the signature
 
-To prevent your application against a replay attack, we recommend that you verify all incoming webhook events by validating our unique signature, X-ALLINE-SIGNATURE, in the headers.
+Every event carries the header `X-ALLINE-SIGNATURE`: the HMAC-SHA256 of the raw request body, hex encoded, with your signing key as the key. You get the signing key from your account representative. Compute the same HMAC over the body you received and compare it with the header to check that the event comes from <span style="font-weight: bold">ALL<span style="color: #d83636;">IN</span>E</span> and was not changed.
 
-The signature is a token that can be decoded with the value of your secret_key. You can get it from your account representative. It will always be a hash string starting with webh_.
-
-
- 
-
-
-
-
-
+```shell
+# PHP example
+$expected = hash_hmac('sha256', $rawBody, $signingKey);
+$valid = hash_equals($expected, $request->header('X-ALLINE-SIGNATURE'));
+```
